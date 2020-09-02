@@ -61,7 +61,9 @@ function isEqualTo(x, y) {
 }
 console.log(isEqualTo(1, '1'));
 
-if (1 <= 2 && 2 == 4) {console.log('yes');}
+if (1 <= 2 && 2 == 4) {
+    console.log('yes');
+}
 
 //Gold Medal
 console.log('**Gold Medal**')
@@ -71,12 +73,9 @@ function stringChecker(item) {
 console.log(stringChecker('dog'));
 
 function booleanChecker(item) {
-    return typeof item === 'boolean' ? item + ' is a boolean' : item + ' is not a boolean';
+    return typeof item === 'boolean' ? 'is a boolean' : 'is not a boolean';
 }
-// pass in true with quotes
 console.log(booleanChecker('true'));
-// pass in true without quotes
-console.log(booleanChecker(true));
 
 function undefinedChecker(item) {
     return typeof item === 'undefined' ? 'Variable is undefined' : item + ' is defined';
@@ -87,11 +86,8 @@ console.log(undefinedChecker(x));
 function greaterThanChecker(item1, item2) {
     return item1 > item2 ? true : false;
 }
-console.log(greaterThanChecker('t', 12));
-console.log(greaterThanChecker('e', 5));
-console.log(greaterThanChecker('s', 1));
-console.log(greaterThanChecker('t', 100));
-console.log(greaterThanChecker('abc', 2));
+console.log(greaterThanChecker('s', 12));
+console.log(greaterThanChecker('abc', 3));
 console.log(greaterThanChecker('xyz', 4));
 
 var num = 10;
