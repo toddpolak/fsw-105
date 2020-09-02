@@ -14,8 +14,7 @@ var enemies = ["Lex","Batman","Darkseid","Brainiac","General Zod","Doomsday"];
 function Who_Wins(is_there_kryptonite, enemy_name) {
     if (!is_there_kryptonite) {
         return "Superman beats " + enemy_name + ", of course";
-    }
-    else {
+    } else {
         return "Depends on how quick Superman can get rid of the Kryptonite. " + enemy_name + " could possibly win this one.";
     }
 }
@@ -23,11 +22,13 @@ function Who_Wins(is_there_kryptonite, enemy_name) {
 for (var i = 0; i < enemies.length; i++)
 {
     var is_there_kryptonite;
+
     if (i % 2 === 0) {
         is_there_kryptonite = true;
     } else {
         is_there_kryptonite = false;
     }
+
     console.log(Who_Wins(is_there_kryptonite,enemies[i]));
 }
 
@@ -49,8 +50,8 @@ while (clarkKent){
     var phoneBoothQuickChange = Math.random();
 
     if (phoneBoothQuickChange >= 0.5) {
-        clarkKent=false;
-        superman=true;
+        clarkKent = false;
+        superman = true;
         console.log("Now I'm Superman!");
     }
 }
