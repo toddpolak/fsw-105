@@ -65,20 +65,14 @@ for (i = 0; i < 100; i++) {
 //*Extra Credit*
 //var lightArray = [2, 5, 435, 4, 3];
 var lightArray = [2, 3, 2];
-var lightStatus = 0; //off - even
+var lightToggle = 0;
 
 for (i = 0; i < lightArray.length; i++) {
-
-    var lightToggle = lightArray[i];
-    console.log('lightToggle: ' + lightArray[i]);
-
-    for (j = 1; j <= lightToggle; j++) {
-        console.log('J ' + j);
-        lightStatus++;
+    for (j = 1; j <= lightArray[i]; j++) {
+        lightToggle++;
     }
 }
-console.log(lightStatus);
-if (lightStatus % 2 === 0) {
+if (lightToggle % 2 === 0) {
     console.log('lights are off');
 } else {
     console.log('lights are on');
