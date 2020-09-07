@@ -1,4 +1,3 @@
-/*
 var peopleWhoWantToSeeMadMaxFuryRoad = [
     {
         name: 'Mike',
@@ -60,11 +59,13 @@ for (i = 0; i < 100; i++) {
         console.log('Even');
     }
 }
-*/
 
 //*Extra Credit*
+//var lightArray = [2, 3, 2];
 //var lightArray = [2, 5, 435, 4, 3];
-var lightArray = [2, 3, 2];
+//var lightArray = [1, 1, 1, 1, 3];
+var lightArray = [9, 3, 4, 2];
+
 var lightToggle = 0;
 
 for (i = 0; i < lightArray.length; i++) {
@@ -73,7 +74,7 @@ for (i = 0; i < lightArray.length; i++) {
     }
 }
 if (lightToggle % 2 === 0) {
-    console.log('lights are off');
+    console.log('light is off');
 } else {
-    console.log('lights are on');
+    console.log('light is on');
 }
