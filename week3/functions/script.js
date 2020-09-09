@@ -1,12 +1,12 @@
 function twoNumberSum(num1, num2) {
     return num1 + num2;
 }
-console.log(twoNumberSum(74, 13))
+//console.log(twoNumberSum(74, 13))
 
 function largestOfThreeNumbers(num1, num2, num3) {
     return Math.max(num1, num2, num3);
 }
-console.log(largestOfThreeNumbers(12, 7, 3))
+//console.log(largestOfThreeNumbers(12, 7, 3))
 
 function oddOrEven(num) {
     if (num % 2 === 0) {
@@ -15,8 +15,8 @@ function oddOrEven(num) {
         return 'odd';
     }
 }
-console.log(oddOrEven(20))
-console.log(oddOrEven(183))
+//console.log(oddOrEven(20))
+//console.log(oddOrEven(183))
 
 function stringManipulation(str) {
     if (str.length <= 20) {
@@ -25,17 +25,26 @@ function stringManipulation(str) {
         return str.substring(0, (str.length / 2));
     }
 }
-console.log(stringManipulation('I really enjoy learning JavaScript'))
-console.log(stringManipulation('JavaScript'))
+//console.log(stringManipulation('I really enjoy learning JavaScript'))
+//console.log(stringManipulation('JavaScript'))
 
-function fibonacci(n) {
-    if (n <= 2) return 1;
-  
-    const f = [0, 1, 1];
-    for(let i = 3; i <= n; i++) {
-      f[i] = f[i-1] + f[i-2];
+//*Extra Credit*
+
+function buildSequence(num) {
+    var a = 1;
+    var b = 0;
+    var temp;
+    var arry = [];
+
+    while (num >= 0) {
+        temp = a;
+        arry.push(a);
+        a = a + b;
+        b = temp;
+        num--;
     }
-    return f;
-    //return f[f.length-1];
-  }
-  console.log(fibonacci(5))
+    return arry;
+}
+console.log(buildSequence(11));
+
+// 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144
