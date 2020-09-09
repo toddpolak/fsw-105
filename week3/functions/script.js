@@ -34,8 +34,17 @@ function buildSequence(num) {
     var a = 1;
     var b = 0;
     var temp;
-    var arry = [];
+    var count = 0;
+    //var arry = [];
 
+    for (i = 1; i <= num; i++) {
+        temp = a;
+        count += a;
+        //arry.push(a);
+        a = a + b;
+        b = temp;
+    }
+    /*
     while (num >= 0) {
         temp = a;
         arry.push(a);
@@ -43,8 +52,10 @@ function buildSequence(num) {
         b = temp;
         num--;
     }
-    return arry;
+    */
+    //return arry;
+    return count;
 }
-console.log(buildSequence(11));
+console.log(buildSequence(3));
 
 // 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144
