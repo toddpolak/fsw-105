@@ -1,12 +1,12 @@
 function twoNumberSum(num1, num2) {
     return num1 + num2;
 }
-//console.log(twoNumberSum(74, 13))
+console.log(twoNumberSum(74, 13))
 
 function largestOfThreeNumbers(num1, num2, num3) {
     return Math.max(num1, num2, num3);
 }
-//console.log(largestOfThreeNumbers(12, 7, 3))
+console.log(largestOfThreeNumbers(12, 7, 3))
 
 function oddOrEven(num) {
     if (num % 2 === 0) {
@@ -15,8 +15,8 @@ function oddOrEven(num) {
         return 'odd';
     }
 }
-//console.log(oddOrEven(20))
-//console.log(oddOrEven(183))
+console.log(oddOrEven(20))
+console.log(oddOrEven(183))
 
 function stringManipulation(str) {
     if (str.length <= 20) {
@@ -43,16 +43,24 @@ function fibonacciNumbers(num) {
     }
     return count;
 }
-//console.log(fibonacciNumbers(6));
+console.log(fibonacciNumbers(6));
 
-function frequentLetters(str) {
-    var curChar;
-    var commonChar;
-    var charCount = 0;
+function mostFrequentLetter(str) {
+    var letters = {};
+    var freqLetter = '';
+    
+    for (i = 0; i < str.length; i++) {
+        var curLetter = str.charAt(i);
 
-    for (i=0; i < str.length; i++) {
-        curChar = str.charAt(i);
-        console.log(str.charAt(i));
+        if (!letters[curLetter]) {
+            letters[curLetter] = 0;
+        }
+        letters[curLetter]++;
+
+        if (freqLetter == '' || letters[curLetter] > letters[freqLetter]) {
+            freqLetter = curLetter;
+        }
     }
+    return 'The most frequent letter/character in (' + str + ') is: (' + freqLetter + ')';
 }
-//frequentLetters('java script');
+console.log(mostFrequentLetter('javascript'));
