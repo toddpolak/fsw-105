@@ -22,40 +22,37 @@ function stringManipulation(str) {
     if (str.length <= 20) {
         return str + str;
     } else {
-        return str.substring(0, (str.length / 2));
+        return str.substring(0, Math.floor(str.length / 2));
     }
 }
-//console.log(stringManipulation('I really enjoy learning JavaScript'))
-//console.log(stringManipulation('JavaScript'))
+console.log(stringManipulation('I really enjoy learning JavaScript'))
+console.log(stringManipulation('JavaScript'))
 
 //*Extra Credit*
-
-function buildSequence(num) {
+function fibonacciNumbers(num) {
     var a = 1;
     var b = 0;
     var temp;
     var count = 0;
-    //var arry = [];
 
     for (i = 1; i <= num; i++) {
         temp = a;
         count += a;
-        //arry.push(a);
         a = a + b;
         b = temp;
     }
-    /*
-    while (num >= 0) {
-        temp = a;
-        arry.push(a);
-        a = a + b;
-        b = temp;
-        num--;
-    }
-    */
-    //return arry;
     return count;
 }
-console.log(buildSequence(3));
+//console.log(fibonacciNumbers(6));
 
-// 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144
+function frequentLetters(str) {
+    var curChar;
+    var commonChar;
+    var charCount = 0;
+
+    for (i=0; i < str.length; i++) {
+        curChar = str.charAt(i);
+        console.log(str.charAt(i));
+    }
+}
+//frequentLetters('java script');
