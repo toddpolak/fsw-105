@@ -61,6 +61,6 @@ function mostFrequentLetter(str) {
             freqLetter = curLetter;
         }
     }
-    return 'The most frequent letter/character in (' + str + ') is: (' + freqLetter + ')';
+    return freqLetter;
 }
-console.log(mostFrequentLetter('JavaScript'));
+console.log("The most frequent letter/character in ('JavaScript') is: (" + mostFrequentLetter('JavaScript') + ")");
