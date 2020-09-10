@@ -1,12 +1,12 @@
 function twoNumberSum(num1, num2) {
     return num1 + num2;
 }
-console.log(twoNumberSum(74, 13))
+console.log('Two Number Sum (74 and 13) ' + twoNumberSum(74, 13))
 
 function largestOfThreeNumbers(num1, num2, num3) {
     return Math.max(num1, num2, num3);
 }
-console.log(largestOfThreeNumbers(12, 7, 3))
+console.log('Largest of Three Numbers (12, 7, and 3) ' + largestOfThreeNumbers(12, 7, 3))
 
 function oddOrEven(num) {
     if (num % 2 === 0) {
@@ -15,8 +15,8 @@ function oddOrEven(num) {
         return 'odd';
     }
 }
-console.log(oddOrEven(20))
-console.log(oddOrEven(183))
+console.log('Odd or Even (20) ' + oddOrEven(20))
+console.log('Odd or Even (183) ' + oddOrEven(183))
 
 function stringManipulation(str) {
     if (str.length <= 20) {
@@ -25,8 +25,8 @@ function stringManipulation(str) {
         return str.substring(0, Math.floor(str.length / 2));
     }
 }
-console.log(stringManipulation('I really enjoy learning JavaScript'))
-console.log(stringManipulation('JavaScript'))
+console.log('Concatenation or Half: ' + stringManipulation('I really enjoy learning JavaScript'))
+console.log('Concatenation or Half: ' + stringManipulation('JavaScript'))
 
 //*Extra Credit*
 function fibonacciNumbers(num) {
@@ -43,7 +43,7 @@ function fibonacciNumbers(num) {
     }
     return count;
 }
-console.log(fibonacciNumbers(6));
+console.log("Sum of first 'n' Fibonacci Numbers: " + fibonacciNumbers(8));
 
 function mostFrequentLetter(str) {
     var letters = {};
@@ -63,4 +63,4 @@ function mostFrequentLetter(str) {
     }
     return 'The most frequent letter/character in (' + str + ') is: (' + freqLetter + ')';
 }
-console.log(mostFrequentLetter('javascript'));
+console.log(mostFrequentLetter('JavaScript'));
