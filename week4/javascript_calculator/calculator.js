@@ -1,11 +1,22 @@
-const readlineSync = require('readline-sync');
+const readlineSync = require('readline-sync'),
+  chalk = require('chalk'),
+  methods = require('./methods');
 
-var firstNumber = readlineSync.question('Please enter your first number: ');
-var secondNumber = readlineSync.question('Please enter your second number: ');
+let firstNum = readlineSync.questionInt(chalk.blueBright('Please enter your first number: '));
+let secondNum = readlineSync.questionInt(chalk.greenBright('Please enter your second number: '));
 
-var operation = ['Add', 'Subtract', 'Multiply', 'Divide'],
-  index = readlineSync.keyInSelect(operation, 'Please enter the operation to perform:');
+let operation = ['Add', 'Subtract', 'Multiply', 'Divide'],
+  index = readlineSync.keyInSelect(operation, chalk.redBright('Please enter the operation to perform:'));
 
-console.log('First Number: ' + firstNumber);
-console.log('Second Number: ' + secondNumber);
-console.log('Operation: ' + index);
+switch (index) {
+  case 0: console.log('The Sum of ' + firstNum + ' and ' + secondNum + ' Results in: ' 
+    + chalk.yellow(methods.calcAdd(firstNum, secondNum)));
+    break;
+  case 1: console.log(firstNum + ' Minus ' + secondNum + ' Results in: '
+    + chalk.yellow(methods.calcSub(firstNum, secondNum)));
+    break;
+  case 2: 
+    break;
+  case 3: 
+    break;
+}
