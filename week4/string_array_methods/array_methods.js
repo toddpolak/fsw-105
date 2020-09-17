@@ -15,6 +15,14 @@ function arrayMethods() {
 
     console.log('orange index: ' + orangeIndex);
 
+    fruit.push(orangeIndex);
+
+    console.log('fruit: ' + fruit);
+
+    console.log('vegetables: ' + vegetables);
+
+    
+
 }
 
 arrayMethods();
