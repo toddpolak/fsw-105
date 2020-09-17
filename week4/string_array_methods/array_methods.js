@@ -2,7 +2,6 @@ var fruit = ['bannana', 'apple', 'orange', 'watermelon'];
 var vegetables = ['carrot', 'tomato', 'pepper', 'lettuce'];
 
 function arrayMethods() {
-
     vegetables.pop();
     console.log('vegetables: ' + vegetables);
 
