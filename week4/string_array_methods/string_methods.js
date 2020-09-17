@@ -1,19 +1,13 @@
 var myString = 'javascript development is fun';
 console.log('Value used: ' + myString);
 
-function capitalizeAndLowercase(str) {
-    return str.toUpperCase() + str.toLowerCase()
-}
+capitalizeAndLowercase = (str) => str.toUpperCase() + str.toLowerCase()
 console.log('All caps followed by the same string all lowercase: ' + capitalizeAndLowercase(myString));
 
-function findMiddleIndex(str) {
-    return Math.floor(str.length / 2);
-}
+findMiddleIndex = (str) => Math.floor(str.length / 2);
 console.log('Half the length, and rounded down: ' + findMiddleIndex(myString));
 
-function returnFirstHalf(str) {
-    return str.slice(0, Math.floor(str.length / 2));
-}
+returnFirstHalf = (str) => str.slice(0, Math.floor(str.length / 2));
 console.log('First half of the string: ' + returnFirstHalf(myString));
 
 function capAndLower(str) {
