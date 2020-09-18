@@ -1,10 +1,28 @@
-const readlineSync = require('readline-sync'),
-  chalk = require('chalk'),
-  methods = require('./methods');
+const readlineSync = require('readline-sync'), chalk = require('chalk');
 const questionColor = chalk.magentaBright.bold;
 const answerSummaryColor = chalk.blueBright.bold;
 const answerColor = chalk.yellowBright.bold;
 let index, operation;
+
+function calcAdd(num1, num2) {
+  return 'The Sum of ' + answerSummaryColor(num1) + ' and ' + answerSummaryColor(num2) 
+  + ' Results in: ' + answerColor(num1 + num2).toLocaleString();
+}
+
+function calcSub(num1, num2) {
+  return answerSummaryColor(num1) + ' Minus ' + answerSummaryColor(num2) + ' Results in: ' 
+  + answerColor(num1 - num2).toLocaleString();
+}
+
+function calcMult(num1, num2) {
+  return answerSummaryColor(num1) + ' Multiplied by ' + answerSummaryColor(num2) + ' Results in: ' 
+  + answerColor(num1 * num2).toLocaleString();
+}
+
+function calcDiv(num1, num2) {
+  return answerSummaryColor(num1) + ' Divided by ' + answerSummaryColor(num2) + ' Results in: ' 
+  + answerColor(num1 / num2).toLocaleString();
+}
 
 while (index !== -1) {
   let firstNum = readlineSync.questionInt(questionColor('Please enter your first number: '));
@@ -14,17 +32,13 @@ while (index !== -1) {
     index = readlineSync.keyInSelect(operation, questionColor('Please enter the operation to perform:'));
 
   switch (index) {
-    case 0: console.log('The Sum of ' + answerSummaryColor(firstNum) + ' and ' 
-      + answerSummaryColor(secondNum) + ' Results in: ' + answerColor(methods.calcAdd(firstNum, secondNum)));
+    case 0: console.log(calcAdd(firstNum, secondNum));
       break;
-    case 1: console.log(answerSummaryColor(firstNum) + ' Minus ' + answerSummaryColor(secondNum) 
-      + ' Results in: ' + answerColor(methods.calcSub(firstNum, secondNum)));
+    case 1: console.log(calcSub(firstNum, secondNum));
       break;
-    case 2: console.log(answerSummaryColor(firstNum) + ' Multiplied by ' + answerSummaryColor(secondNum) 
-      + ' Results in: ' + answerColor(methods.calcMult(firstNum, secondNum)));
+    case 2: console.log(calcMult(firstNum, secondNum));
       break;
-    case 3: console.log(answerSummaryColor(firstNum) + ' Divided by ' + answerSummaryColor(secondNum) 
-      + ' Results in: ' + answerColor(methods.calcDiv(firstNum, secondNum)));
+    case 3: console.log(calcDiv(firstNum, secondNum));
       break;
   }
 }
