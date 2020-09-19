@@ -20,8 +20,14 @@ function calcMult(num1, num2) {
 }
 
 function calcDiv(num1, num2) {
+  let rem = num1 % num2;
+  let rslt = Math.floor(num1 / num2);
+
+  if (rem > 0) {
+    rslt += ' with a remainder of: ' + rem;
+  }
   return answerSummaryColor(num1) + ' Divided by ' + answerSummaryColor(num2) + ' Results in: ' 
-  + answerColor(num1 / num2).toLocaleString();
+  + answerColor(rslt).toLocaleString();
 }
 
 while (index !== -1) {
