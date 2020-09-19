@@ -4,19 +4,19 @@ const summaryColor = chalk.blueBright.bold;
 const ansColor = chalk.yellowBright.bold;
 let operation, options;
 
-calcAdd = (num1, num2) => `The Sum of ${summaryColor(num1)} and ${summaryColor(num2)} is: ${ansColor(num1 + num2).toLocaleString()}\n`;
+calcAdd = (num1, num2) => `The sum of ${summaryColor(num1)} and ${summaryColor(num2)} is: ${ansColor(num1 + num2).toLocaleString()}\n`;
 
-calcSub = (num1, num2) => `${summaryColor(num1)} Minus ${summaryColor(num2)} Equals: ${ansColor(num1 - num2).toLocaleString()}\n`;
+calcSub = (num1, num2) => `${summaryColor(num1)} minus ${summaryColor(num2)} is equal to: ${ansColor(num1 - num2).toLocaleString()}\n`;
 
-calcMult = (num1, num2) => `${summaryColor(num1)} Multiplied by ${summaryColor(num2)} Equals: ${ansColor(num1 * num2).toLocaleString()}\n`;
+calcMult = (num1, num2) => `${summaryColor(num1)} multiplied by ${summaryColor(num2)} is equal to: ${ansColor(num1 * num2).toLocaleString()}\n`;
 
 function calcDiv(num1, num2) {
   let rem = num1 % num2;
   let rslt = Math.floor(num1 / num2);
-  let rsltSummary = `${summaryColor(num1)} Divided by ${summaryColor(num2)} Equals: ${ansColor(rslt).toLocaleString()}`;
+  let rsltSummary = `${summaryColor(num1)} divided by ${summaryColor(num2)} is equal to: ${ansColor(rslt).toLocaleString()}`;
 
   if (rem > 0) {
-    rsltSummary += ` With a Remainder of: ${ansColor(rem).toLocaleString()}`;
+    rsltSummary += ` with a remainder of: ${ansColor(rem).toLocaleString()}`;
   }
   rsltSummary += '\n';
   return rsltSummary;
@@ -27,7 +27,7 @@ while (options !== -1) {
   let secondNum = readlineSync.questionInt(qstColor('Please enter your second number: '));
 
   operation = ['Add', 'Subtract', 'Multiply', 'Divide'],
-    options = readlineSync.keyInSelect(operation, qstColor('Please enter the operation to perform:'));
+    options = readlineSync.keyInSelect(operation, qstColor('Please enter the operation to perform:'), {cancel: 'Quit'});
 
   switch (options) {
     case 0: console.log(calcAdd(firstNum, secondNum));
