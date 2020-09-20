@@ -22,11 +22,11 @@ function calcDiv(num1, num2) {
   return rsltSummary;
 }
 
-while (options !== -1) {
+while (options != -1) {
   operation = ['Add', 'Subtract', 'Multiply', 'Divide'],
     options = readlineSync.keyInSelect(operation, qstColor('Please enter the operation to perform:'), {cancel: 'Quit'});
   
-  if (options === -1) { break; }
+  if (options == -1) { break; }
   let firstNum = readlineSync.questionInt(qstColor('Please enter your first number: '));
   let secondNum = readlineSync.questionInt(qstColor('Please enter your second number: '));
 
