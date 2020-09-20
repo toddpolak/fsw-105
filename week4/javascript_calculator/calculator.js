@@ -4,19 +4,19 @@ const summaryColor = chalk.blueBright.bold;
 const ansColor = chalk.yellowBright.bold;
 let operation, options;
 
-calcAdd = (num1, num2) => `The sum of ${summaryColor(num1)} and ${summaryColor(num2)} is: ${ansColor(num1 + num2).toLocaleString()}\n`;
+calcAdd = (num1, num2) => `The sum of ${summaryColor(num1)} and ${summaryColor(num2)} is: ${ansColor(num1 + num2)}\n`;
 
-calcSub = (num1, num2) => `${summaryColor(num1)} minus ${summaryColor(num2)} is equal to: ${ansColor(num1 - num2).toLocaleString()}\n`;
+calcSub = (num1, num2) => `${summaryColor(num1)} minus ${summaryColor(num2)} is equal to: ${ansColor(num1 - num2)}\n`;
 
-calcMult = (num1, num2) => `${summaryColor(num1)} multiplied by ${summaryColor(num2)} is equal to: ${ansColor(num1 * num2).toLocaleString()}\n`;
+calcMult = (num1, num2) => `${summaryColor(num1)} multiplied by ${summaryColor(num2)} is equal to: ${ansColor(num1 * num2)}\n`;
 
 function calcDiv(num1, num2) {
   let rem = num1 % num2;
   let rslt = Math.floor(num1 / num2);
-  let rsltSummary = `${summaryColor(num1)} divided by ${summaryColor(num2)} is equal to: ${ansColor(rslt).toLocaleString()}`;
+  let rsltSummary = `${summaryColor(num1)} divided by ${summaryColor(num2)} is equal to: ${ansColor(rslt)}`;
 
   if (rem > 0) {
-    rsltSummary += ` with a remainder of: ${ansColor(rem).toLocaleString()}`;
+    rsltSummary += ` with a remainder of: ${ansColor(rem)}`;
   }
   rsltSummary += '\n';
   return rsltSummary;
