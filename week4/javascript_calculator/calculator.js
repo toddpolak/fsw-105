@@ -23,20 +23,22 @@ function calcDiv(num1, num2) {
 }
 
 while (options !== -1) {
-  let firstNum = readlineSync.questionInt(qstColor('Please enter your first number: '));
-  let secondNum = readlineSync.questionInt(qstColor('Please enter your second number: '));
-
   operation = ['Add', 'Subtract', 'Multiply', 'Divide'],
     options = readlineSync.keyInSelect(operation, qstColor('Please enter the operation to perform:'), {cancel: 'Quit'});
-
-  switch (options) {
-    case 0: console.log(calcAdd(firstNum, secondNum));
-      break;
-    case 1: console.log(calcSub(firstNum, secondNum));
-      break;
-    case 2: console.log(calcMult(firstNum, secondNum));
-      break;
-    case 3: console.log(calcDiv(firstNum, secondNum));
-      break;
+  
+  if (options !== -1) { 
+    let firstNum = readlineSync.questionInt(qstColor('Please enter your first number: '));
+    let secondNum = readlineSync.questionInt(qstColor('Please enter your second number: '));
+  
+    switch (options) {
+      case 0: console.log(calcAdd(firstNum, secondNum));
+        break;
+      case 1: console.log(calcSub(firstNum, secondNum));
+        break;
+      case 2: console.log(calcMult(firstNum, secondNum));
+        break;
+      case 3: console.log(calcDiv(firstNum, secondNum));
+        break;
+    }
   }
 }
