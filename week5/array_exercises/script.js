@@ -48,4 +48,4 @@ function makeStrings(arr) {
 }
 console.log(makeStrings(arrNames));
 
-//Section C
+// Section C
