@@ -1,10 +1,11 @@
 // Section A
-const arrNames = 
-    [{ name: 'Angelina Jolie', age: 80 },
+const arrNames = [
+    { name: 'Angelina Jolie', age: 80 },
     { name: 'Eric Jones', age: 2 },
     { name: 'Paris Hilton', age: 5 },
     { name: 'Kayne West', age: 16 },
-    { name: 'Bob Ziroll', age: 100 }];
+    { name: 'Bob Ziroll', age: 100 }
+];
 
 function fiveAndGreaterOnly(arr) {
     return arr.filter(num => num > 5);
@@ -33,7 +34,7 @@ function stringItUp(arr) {
 console.log(stringItUp([2, 5, 100]));
 
 function capitalizeNames(arr) {
-    return arr.map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase());
+    return arr.map(name => name[0].toUpperCase() + name.slice(1).toLowerCase());
 }
 console.log(capitalizeNames(['john', 'JACOB', 'jinGleHeimer', 'schmidt']));
 
