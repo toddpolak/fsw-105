@@ -63,5 +63,11 @@ function greatestToLeast(arr) {
 console.log(greatestToLeast([1, 3, 5, 2, 90, 20]));
 
 function lengthSort(arr) {
-
+    return arr.sort((a, b) => a.length - b.length);
 }
+console.log(lengthSort(['dog', 'wolf', 'by', 'family', 'eaten']));
+
+function alphabetical(arr) {
+    return arr.sort();
+}
+console.log(alphabetical(['dog', 'wolf', 'by', 'family', 'eaten']));
