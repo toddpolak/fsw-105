@@ -50,3 +50,18 @@ function makeStrings(arr) {
 console.log(makeStrings(arrNames));
 
 // Section C
+
+// Section D
+function leastToGreatest(arr) {
+    return arr.sort((a, b) => a - b);
+}
+console.log(leastToGreatest([1, 3, 5, 2, 90, 20]));
+
+function greatestToLeast(arr) {
+    return arr.sort((a, b) => b - a);
+}
+console.log(greatestToLeast([1, 3, 5, 2, 90, 20]));
+
+function lengthSort(arr) {
+
+}
