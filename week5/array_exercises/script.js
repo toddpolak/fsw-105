@@ -95,7 +95,7 @@ function totalVotes_altMethod(arr) {
     })
     return count;
 }
-console.log(totalVotes_altMethod(voters));
+console.log('Alternate method for above excercise: ' + totalVotes_altMethod(voters));
 
 const wishlist = [
     { title: 'Tesla Model S', price: 90000 },
