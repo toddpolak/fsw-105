@@ -60,17 +60,7 @@ function stringConcat(arr) {
 }
 console.log(stringConcat([1,2,3]));
 
-// Note: You don't necessarily have to use reduce for this, so try to think of multiple ways you could solve this.
-function totalVotes(arr) {
-    return arr.reduce(function(final, voter) {
-        if(voter.voted) {
-            final++;
-        }
-        return final;
-    }, 0);
-}
-
-var voters = [
+const voters = [
     { name: 'Bob', age: 30, voted: true },
     { name: 'Jake', age: 32, voted: true },
     { name: 'Kate', age: 25, voted: false },
@@ -85,16 +75,29 @@ var voters = [
     { name: 'Zack', age: 19, voted: false }
 ];
 
-console.log(totalVotes(voters));
-
-function shoppingSpree(arr) {
-    return arr.reduce(function(final, current) {
-        final += current.price;
+function totalVotes(arr) {
+    return arr.reduce(function(final, voter) {
+        if(voter.voted) {
+            final++;
+        }
         return final;
     }, 0);
 }
+console.log(totalVotes(voters));
 
-var wishlist = [
+// Note: You don't necessarily have to use reduce for this, so try to think of multiple ways you could solve this.
+function totalVotes_altMethod(arr) {
+    let count = 0;
+    arr.forEach(function(voter) {
+        if(voter.voted) {
+            count++;
+        }
+    })
+    return count;
+}
+console.log(totalVotes_altMethod(voters));
+
+const wishlist = [
     { title: 'Tesla Model S', price: 90000 },
     { title: '4 carat diamond ring', price: 45000 },
     { title: 'Fancy hacky Sack', price: 5 },
@@ -102,21 +105,23 @@ var wishlist = [
     { title: 'A second Tesla Model S', price: 90000 }
 ];
 
+function shoppingSpree(arr) {
+    return arr.reduce(function(final, current) {
+        final += current.price;
+        return final;
+    }, 0);
+}
 console.log(shoppingSpree(wishlist));
 
-function flatten(arr) {
-    return arr.reduce(function(final, current) {
-        final = final.concat(current);
-        return final;
-    });
-}
-
-var arrays = [
+const arrays = [
     ['1', '2', '3'],
     [true],
     [4, 5, 6]
 ];
 
+function flatten(arr) {
+    return arr.reduce((final, current) => final.concat(current));
+}
 console.log(flatten(arrays));
 
 // Section D
