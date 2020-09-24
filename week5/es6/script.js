@@ -1,5 +1,3 @@
-// ES6 Part2
-
 const name = 'John', age = 101
 
 function runForLoop(pets) {
