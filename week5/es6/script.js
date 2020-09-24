@@ -1,27 +1,77 @@
+// ES6 Part 2
+
+// #1
 const name = 'John', age = 101;
 
 function runForLoop(pets) {
     let petObjects = []
     for (let i = 0; i < pets.length; i++) {
-        let pet = { type: pets[i] };
+        let pet = { type: pets[i] }
         let name;
         if (pets[i] === 'cat') {
-            name = 'fluffy';
+            name = 'fluffy'
         } else {
-            name = 'spot';
+            name = 'spot'
         }
-        console.log('pet name: ', name);
-        pet.name = name;
-        petObjects.push(pet);
+        console.log('pet name: ', name)
+        pet.name = name
+        petObjects.push(pet)
     }
-    console.log('man name: ', name);
-    return petObjects;
+    console.log('man name: ', name)
+    return petObjects
 }
-
 runForLoop(['cat', 'dog']);
 
+// #2
 const carrots = ['bright orange', 'ripe', 'rotten'];
 
 mapVegetables = arr => arr.map(carrot => ({ type: 'carrot', name: carrot }));
 
 console.log(mapVegetables(carrots));
+
+// #3
+const people = [
+    {
+        name: 'Princess Peach',
+        friendly: false
+    },
+    {
+        name: 'Luigi',
+        friendly: true
+    },
+    {
+        name: 'Mario',
+        friendly: true
+    },
+    {
+        name: 'Bowser',
+        friendly: false
+    }
+];
+
+filterForFriendly = arr => arr.filter(person => person.friendly);
+
+console.log(filterForFriendly(people));
+
+// #4
+const num1 = 9, num2 = 3;
+
+doMathSum = (a, b) => a + b;
+
+console.log(doMathSum(num1, num2));
+
+const produceProduct = (a, b) => a * b;
+
+console.log(produceProduct(num1, num2));
+
+// #5
+printString = (firstName = 'Jane', lastName = 'Doe', age = 100) => 
+    'Hi ' + firstName + ' ' + lastName + ', how does it feel to be ' + age + '?';
+
+console.log(printString('Kat', 'Stark', 40));
+
+// #6
+printString = (firstName = 'Jane', lastName = 'Doe', age = 100) => 
+    `Hi ${firstName} ${lastName}, how does it feel to be ${age}?`;
+
+console.log(printString('Kat', 'Stark', 40));
