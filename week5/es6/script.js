@@ -75,3 +75,32 @@ printString = (firstName = 'Jane', lastName = 'Doe', age = 100) =>
     `Hi ${firstName} ${lastName}, how does it feel to be ${age}?`;
 
 console.log(printString('Kat', 'Stark', 40));
+
+// #7
+const animals = [
+    {
+        type: 'dog', 
+        name: 'theodore'
+    },
+    {
+        type: 'cat',
+        name: 'whiskers'
+    },
+    {
+        type: 'pig',
+        name: 'piglette'
+    },
+    {
+        type: 'dog',
+        name: 'sparky'
+    }
+];
+
+filterForDogs = arr => arr.filter(animal => animal.type === 'dog' ? true : false);
+
+console.log(filterForDogs(animals));
+
+// #8
+welcomeMessage = (location, name) => `Hi ${name}!\n\nWelcome to ${location}.\n\nI hope you enjoy your stay. Please ask the president of ${location} if you need anything.`;
+
+console.log(welcomeMessage('Hawaii', 'Janice'));
