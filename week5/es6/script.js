@@ -6,19 +6,19 @@ const name = 'John', age = 101;
 function runForLoop(pets) {
     let petObjects = []
     for (let i = 0; i < pets.length; i++) {
-        let pet = { type: pets[i] }
-        let name;
+        let pet = { type: pets[i] }, name;
+
         if (pets[i] === 'cat') {
-            name = 'fluffy'
+            name = 'fluffy';
         } else {
-            name = 'spot'
+            name = 'spot';
         }
         console.log('pet name: ', name)
-        pet.name = name
-        petObjects.push(pet)
+        pet.name = name;
+        petObjects.push(pet);
     }
-    console.log('man name: ', name)
-    return petObjects
+    console.log('man name: ', name);
+    return petObjects;
 }
 runForLoop(['cat', 'dog']);
 
@@ -64,15 +64,8 @@ const produceProduct = (a, b) => a * b;
 
 console.log(produceProduct(num1, num2));
 
-// #5
-printString = (firstName = 'Jane', lastName = 'Doe', age = 100) => 
-    'Hi ' + firstName + ' ' + lastName + ', how does it feel to be ' + age + '?';
-
-console.log(printString('Kat', 'Stark', 40));
-
-// #6
-printString = (firstName = 'Jane', lastName = 'Doe', age = 100) => 
-    `Hi ${firstName} ${lastName}, how does it feel to be ${age}?`;
+// #5 & #6
+printString = (firstName = 'Jane', lastName = 'Doe', age = 100) => `Hi ${firstName} ${lastName}, how does it feel to be ${age}?`;
 
 console.log(printString('Kat', 'Stark', 40));
 
