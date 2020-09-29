@@ -9,9 +9,9 @@ let isAlive = true;
 let hasKey = false;
 let escapedRoom = false;
 let operation;
-let options = 'Here are your options:\nPress ' + cRed('1') + ' to Put your hand in the ' + cRed('hole') + '\nPress ' 
-    + cYellow('2') + ' to Find a ' + cYellow('key') + '\nPress ' + cBlue('3') 
-    + ' to Open the ' + cBlue('door') + '\nPress ' + cWhite('4') + ' to ' + cWhite('QUIT') +'\n';
+let options = 'Here are your options:\nPress ' + cRed('1') + ' to Put your hand in the ' 
+    + cRed('hole') + '\nPress ' + cYellow('2') + ' to Find a ' + cYellow('key') + '\nPress ' 
+    + cBlue('3') + ' to Open the ' + cBlue('door') + '\nPress ' + cWhite('4') + ' to ' + cWhite('QUIT') +'\n';
 
 console.log(cBox(`     ESCAPE ROOM     `));
 
