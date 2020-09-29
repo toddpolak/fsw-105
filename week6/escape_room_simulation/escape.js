@@ -42,7 +42,7 @@ while (isAlive == true) {
             if (hasKey == false) {
                 console.log(`\nIn order to open the ${cBlue('door')}, you must have a ${cYellow('key')}!\n`);
             } else {
-                console.log(`\n${cBlue('Congradulations!!')} You found your way out of the ${cBox('ROOM!')}`);
+                console.log(`\n${cBlue('Congratulations!!')} You found your way out of the ${cBox('ROOM!')}`);
                 escapedRoom = true;
             }
     }
