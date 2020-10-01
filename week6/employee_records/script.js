@@ -5,10 +5,11 @@ function Employee(name, jobTitle, salary, status = 'Full Time') {
     this.jobTitle = jobTitle;
     this.salary = salary;
     this.status = status;
-    this.printEmployeeForm = function() {
-        console.log(`Name: ${name}, Job Title: ${jobTitle}, Salary: ${salary}, Status: ${status}`);
-    }
 }
+
+Employee.prototype.printEmployeeForm = function () {
+    console.log(`Name: ${this.name}, Job Title: ${this.jobTitle}, Salary: ${this.salary}, Status: ${this.status}`);
+};
 
 const employee1 = new Employee('Bob Smith', 'V School Instructor', '$3000/hour', 'Part time');
 employee1.printEmployeeForm();
