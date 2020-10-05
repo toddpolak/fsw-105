@@ -5,4 +5,8 @@ console.log(chalk.bgCyanBright.yellowBright(`                                   
 console.log(chalk.bgCyanBright.yellowBright.bold(`          WELCOME TO A FANTASY ROLE PLAYING GAME          `));
 console.log(chalk.bgCyanBright.yellowBright(`                                                          `));
 
-console.log(commonMethods.enemyAppears());
+let enemyAppears = commonMethods.enemyAppears();
+
+if (enemyAppears) {
+    console.log(commonMethods.enemyName());
+}
