@@ -1,3 +1,13 @@
+function PlayerInfo(name) {
+    this.name = name;
+}
+
+PlayerInfo.prototype.inventory = function () {
+    console.log(`${this.name}`);
+}
+
+module.exports = PlayerInfo;
+
 module.exports.enemyAppears = () => {
     // 1 in 3 chance the enemy appears
     let min = 1, max = 3;
