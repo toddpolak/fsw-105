@@ -1,9 +1,10 @@
 function PlayerInfo(name) {
     this.name = name;
+    this.hp = 0;
 }
 
 PlayerInfo.prototype.inventory = function () {
-    console.log(`${this.name}`);
+    console.log(`Player Name: ${this.name} Hit Points: ${this.hp}`);
 }
 
 module.exports = PlayerInfo;
