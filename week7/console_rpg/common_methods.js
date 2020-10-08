@@ -1,6 +1,7 @@
 function PlayerInfo(name) {
     this.name = name;
     this.hp = 0;
+    this.inventoryItems = [];
 }
 
 PlayerInfo.prototype.inventory = function () {

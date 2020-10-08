@@ -28,23 +28,19 @@ console.log(cWhite(`At any time during the game, type: 'Print' to see your inven
 readlineSync.setDefaultOptions({limit: ['w', 'l', 'Print', 'q']});
 
 let playerAction = readlineSync.question(playerOptions);
-
-/*
+//let playerAction = readlineSync.prompt(playerOptions);
+//let playerAction = readlineSync.prompt(`${cWhite(playerOptions)}`, {limit: 'wlq'});
 
 console.log(playerAction.toLowerCase());
 
-playerInventory.inventory();
-
+/*
 while (isAlive) {
-    switch (playerAction.toLowerCase) {
+    switch (playerAction.toLowerCase()) {
         case 'print':
             //playerInventory.inventory();
     }
 }
-
 */
-
-//let playerAction = readlineSync.prompt(`${cWhite(playerOptions)}`, {limit: 'wlq'});
 
 //let enemyAppears = commonMethods.enemyAppears();
 
