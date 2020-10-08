@@ -7,8 +7,9 @@ const cYellow = chalk.yellow.bold;
 const cBlue = chalk.cyanBright.bold;
 const cMagenta = chalk.magentaBright.bold;
 const cBox = chalk.black.bold.bgYellow;
-const playerOptions = 'What would you like to do? Enter w to walk, l to look around, Print, or (q to quit) ';
-let isAlive = true;
+const playerOptions = ['Walk', 'Print', 'Quit'];
+//const playerOptions = 'What would you like to do? Enter w to walk, l to look around, Print, or (q to quit) ';
+//let isAlive = true;
 
 //console.log(chalk.bgCyanBright.yellowBright(`                                                    `));
 //console.log(chalk.bgCyanBright.yellowBright.bold(`             A FANTASY ROLE PLAYING GAME            `));
@@ -23,11 +24,11 @@ let playerInventory = new commonMethods(playerName);
 
 console.log(cWhite(`\nHello ${cMagenta(playerName)}, welcome to a Fantasy Role Playing Game!!`));
 
-console.log(cWhite(`At any time during the game, type: 'Print' to see your inventory.`));
+//console.log(cWhite(`At any time during the game, type: 'Print' to see your inventory.`));
 
-readlineSync.setDefaultOptions({limit: ['w', 'l', 'Print', 'q']});
+//readlineSync.setDefaultOptions({limit: ['w', 'l', 'Print', 'q']});
 
-let playerAction = readlineSync.question(playerOptions);
+//let playerAction = readlineSync.question(playerOptions);
 //let playerAction = readlineSync.prompt(playerOptions);
 //let playerAction = readlineSync.prompt(`${cWhite(playerOptions)}`, {limit: 'wlq'});
 
