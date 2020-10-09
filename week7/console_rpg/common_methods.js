@@ -29,7 +29,6 @@ module.exports.enemyName = () => {
         { name: 'Werewolf', value: 5},
         { name: 'Gobblin', value: 6},
         { name: 'Frankenstein', value: 7}
-
     ]
     let min = 1, max = enemyNames.length;
     let enemyNum = Math.floor(Math.random() * (max - min + 1) ) + min;
