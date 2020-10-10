@@ -8,6 +8,9 @@ const cGreen = chalk.green.bold;
 const cMagenta = chalk.magenta.bold;
 const cBox = chalk.black.bold.bgYellow;
 
+const enemyAttackPower;
+const playerAttackPower;
+
 let playerHealth = 50;
 let walkStatus = 0;;
 let question;
@@ -21,6 +24,7 @@ const playerName = readlineSync.question(`${cWhite('Please enter your name to be
 let playerInventory = new commonMethods(playerName, playerHealth);
 
 console.log(cWhite(`\nHello ${cMagenta(playerName)}, welcome to a Fantasy Role Playing Game!!\n`));
+
 console.log(`You have entered a castle. In front of you is a long dark corridor.\n`);
 
 readlineSync.setDefaultOptions({limit: ['w', 'print', 'q']});
@@ -44,6 +48,7 @@ while (playerHealth > 0) {
 
     switch (playerAction.toLowerCase()) {
         case 'w':
+
             walkStatus = 1;
 
             console.log(`Player is walking ...`);
