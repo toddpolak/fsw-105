@@ -1,11 +1,11 @@
-function PlayerInfo(name) {
+function PlayerInfo(name, health) {
     this.name = name;
-    this.hp = 0;
+    this.health = health;
     this.inventoryItems = [];
 }
 
 PlayerInfo.prototype.inventory = function () {
-    console.log(`Player Name: ${this.name} Hit Points: ${this.hp}`);
+    console.log(`Player Name: ${this.name}\nHealth: ${this.health}`);
 }
 
 module.exports = PlayerInfo;
@@ -21,17 +21,10 @@ module.exports.enemyAppears = () => {
 }
 
 module.exports.enemyName = () => {
-    let enemyNames = [
-        { name: 'Dragon', value: 1 },
-        { name: 'Vampire', value: 2},
-        { name: 'Skeleton Warrior', value: 3},
-        { name: 'Witch', value: 4},
-        { name: 'Werewolf', value: 5},
-        { name: 'Gobblin', value: 6},
-        { name: 'Frankenstein', value: 7}
-    ]
+    let enemyNames = ['Dragon', 'Vampire', 'Skeleton Warrior', 'Witch', 
+        'Werewolf', 'Gobblin', 'Frankenstein Monster'];
     let min = 1, max = enemyNames.length;
     let enemyNum = Math.floor(Math.random() * (max - min + 1) ) + min;
 
-    return enemyNames[enemyNum -1].name;
+    return enemyNames[enemyNum -1];
 }
