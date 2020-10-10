@@ -8,21 +8,29 @@ const cGreen = chalk.green.bold;
 const cMagenta = chalk.magenta.bold;
 const cBox = chalk.black.bold.bgYellow;
 
-const enemyAttackPower;
-const playerAttackPower;
-
 let playerHealth = 50;
-let walkStatus = 0;;
+let questionStatus = 0;;
 let question;
 
+/*
 console.log(chalk.bgCyanBright.yellowBright(`                                                    `));
 console.log(chalk.bgCyanBright.yellowBright.bold(`             A FANTASY ROLE PLAYING GAME            `));
 console.log(chalk.bgCyanBright.yellowBright(`                                                    `));
+*/
 
 const playerName = readlineSync.question(`${cWhite('Please enter your name to begin: ')}`);
 
-let playerInventory = new commonMethods(playerName, playerHealth);
+let player = new commonMethods(playerName, playerHealth);
 
+//testing
+player.inventoryItems.push('sword');
+if (!commonMethods.inventoryExists(player.inventoryItems, 'sword')) {
+    player.inventoryItems.push('sword');
+}
+console.log(player.inventoryItems);
+// end testing
+
+/*
 console.log(cWhite(`\nHello ${cMagenta(playerName)}, welcome to a Fantasy Role Playing Game!!\n`));
 
 console.log(`You have entered a castle. In front of you is a long dark corridor.\n`);
@@ -33,9 +41,9 @@ while (playerHealth > 0) {
 
     let enemyHealth = 50;
 
-    if (walkStatus == 0) {
+    if (questionStatus == 0) {
         question = `What would you like to do?`;
-        walkStatus = 1;
+        questionStatus = 1;
     } else {
        question = `What would you like to do next?`;
     }
@@ -49,7 +57,7 @@ while (playerHealth > 0) {
     switch (playerAction.toLowerCase()) {
         case 'w':
 
-            walkStatus = 1;
+            questionStatus = 1;
 
             console.log(`Player is walking ...`);
 
@@ -61,6 +69,7 @@ while (playerHealth > 0) {
             break;
 
         case 'print':
-            playerInventory.inventory();
+            player.inventory();
     }
 }
+*/

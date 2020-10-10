@@ -1,14 +1,23 @@
-function PlayerInfo(name, health) {
+function Player(name, health) {
     this.name = name;
     this.health = health;
     this.inventoryItems = [];
 }
 
-PlayerInfo.prototype.inventory = function () {
+Player.prototype.inventory = function () {
     console.log(`Player Name: ${this.name}\nHealth: ${this.health}`);
 }
 
-module.exports = PlayerInfo;
+module.exports = Player;
+
+module.exports.inventoryExists = (arr, item) => {
+    for (i = 0; i <= arr.length; i++) {
+        if (arr[i] === item) {
+            return true;
+        }
+    }
+    return false;
+}
 
 module.exports.enemyAppears = () => {
     // 1 in 3 chance the enemy appears
