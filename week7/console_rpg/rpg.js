@@ -12,25 +12,24 @@ let playerHealth = 50;
 let questionStatus = 0;;
 let question;
 
-/*
 console.log(chalk.bgCyanBright.yellowBright(`                                                    `));
 console.log(chalk.bgCyanBright.yellowBright.bold(`             A FANTASY ROLE PLAYING GAME            `));
 console.log(chalk.bgCyanBright.yellowBright(`                                                    `));
-*/
 
 const playerName = readlineSync.question(`${cWhite('Please enter your name to begin: ')}`);
 
 let player = new commonMethods(playerName, playerHealth);
 
 //testing
+/*
 player.inventoryItems.push('sword');
 if (!commonMethods.inventoryExists(player.inventoryItems, 'sword')) {
     player.inventoryItems.push('sword');
 }
 console.log(player.inventoryItems);
 // end testing
+*/
 
-/*
 console.log(cWhite(`\nHello ${cMagenta(playerName)}, welcome to a Fantasy Role Playing Game!!\n`));
 
 console.log(`You have entered a castle. In front of you is a long dark corridor.\n`);
@@ -72,4 +71,3 @@ while (playerHealth > 0) {
             player.inventory();
     }
 }
-*/
