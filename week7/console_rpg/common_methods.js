@@ -5,18 +5,43 @@ function Player(name, health) {
 }
 
 Player.prototype.inventory = function () {
-    console.log(`Player Name: ${this.name}\nHealth: ${this.health}`);
+
+    /*
+    let inventory;
+    let inventoryItems = this.inventoryItems;
+    for (i = 0; i < inventoryItems.length; i++) {
+
+    }
+    */
+
+    //console.log(`Player Name: ${this.name}\nHealth: ${this.health}`);
+    console.log(`Player Name: ${this.name}\nHealth: ${this.health}\nItems: ${this.inventoryItems}`);
 }
 
-module.exports = Player;
-
-module.exports.inventoryExists = (arr, item) => {
+/*
+inventoryExists = (arr, item) => {
     for (i = 0; i <= arr.length; i++) {
         if (arr[i] === item) {
             return true;
         }
     }
     return false;
+}
+*/
+
+module.exports = Player;
+
+module.exports.specialItem = () => {
+    let specialItems = ['Gold Coin', 'Red Ruby', 'Shiny Diamond'];
+    let min = 1, max = specialItems.length;
+    let specialItem = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    return specialItems[specialItem -1];
+}
+
+module.exports.earnedHealthPoints = () => {
+    let min = 1, max = 5;
+    return Math.floor(Math.random() * (max - min + 1)) + min; 
 }
 
 module.exports.enemyAppears = () => {
@@ -40,4 +65,13 @@ module.exports.enemyName = () => {
 module.exports.attackPower = () => {
     let min = 1, max = 3;
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+module.exports.ranAway = () => {
+    let run = Math.floor(Math.random() * (2 - 1 + 1)) + 1;
+    if (run == 1) {
+        return true;
+    } else {
+        return false;
+    }
 }
