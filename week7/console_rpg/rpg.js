@@ -8,9 +8,9 @@ const cGreen = chalk.green.bold;
 const cMagenta = chalk.magenta.bold;
 const cBox = chalk.black.bold.bgYellow;
 
-let playerHealth = 50;
-let questionStatus = 0;;
-let question;
+let playerHealth = 10;
+let initQuestionStatus = 0;;
+let initQuestion;
 
 console.log(chalk.bgCyanBright.yellowBright(`                                                    `));
 console.log(chalk.bgCyanBright.yellowBright.bold(`             A FANTASY ROLE PLAYING GAME            `));
@@ -34,36 +34,98 @@ console.log(cWhite(`\nHello ${cMagenta(playerName)}, welcome to a Fantasy Role P
 
 console.log(`You have entered a castle. In front of you is a long dark corridor.\n`);
 
-readlineSync.setDefaultOptions({limit: ['w', 'print', 'q']});
+const initOptions = {limit: ['w', 'print', 'q']};
+
+const enemyEncounterOptions = {limit: ['a', 'r', 'q']};
+
+const enemyEncounterQuestion = `What would you like to do? Enter a to attack, r to run or q to quit: `;
 
 while (playerHealth > 0) {
 
-    let enemyHealth = 50;
+    let enemyHealth = 10;
 
-    if (questionStatus == 0) {
-        question = `What would you like to do?`;
-        questionStatus = 1;
+    if (initQuestionStatus == 0) {
+        initQuestion = `What would you like to do?`;
+        initQuestionStatus = 1;
     } else {
-       question = `What would you like to do next?`;
+       initQuestion = `What would you like to do next?`;
     }
 
-    let playerOptions = `${question} Enter w to walk, type 'print' to see your inventory' or q to quit `;
+    const initPlayerQuestion = `${initQuestion} Enter w to walk, type 'print' to see your inventory' or q to quit: `;
 
-    let playerAction = readlineSync.question(playerOptions);
+    let initPlayerAction = readlineSync.question(initPlayerQuestion, initOptions);
 
-    if (playerAction == 'q') { break; }
+    if (initPlayerAction == 'q') { break; }
 
-    switch (playerAction.toLowerCase()) {
+    switch (initPlayerAction.toLowerCase()) {
         case 'w':
 
-            questionStatus = 1;
+            initQuestionStatus = 1;
 
             console.log(`Player is walking ...`);
 
             let enemyAppears = commonMethods.enemyAppears();
 
             if (enemyAppears) {
-                console.log(`Out of a door a ${cRed(commonMethods.enemyName())} appears!`)
+
+                let enemyType = commonMethods.enemyName();
+
+                let playerAttackPower, enemyAttackPower;
+
+                console.log(`Out of a door a ${cRed(enemyType)} appears!`)
+
+                while (playerHealth > 0 && enemyHealth > 0) {
+
+                    let enemyEncounter = readlineSync.question(enemyEncounterQuestion, enemyEncounterOptions);
+
+                    switch (enemyEncounter) {
+                        case 'a':
+
+                        playerAttackPower = commonMethods.attackPower();
+
+                        enemyAttackPower = commonMethods.attackPower();
+    
+                            console.log(`The ${enemyType}'s health is: ${enemyHealth} ...\n`)
+
+                            enemyHealth -= playerAttackPower;
+    
+                            console.log(`You have attacked the ${enemyType} with an attack power of: ${playerAttackPower}\n`);
+
+                            if (enemyHealth < 0) {enemyHealth = 0;}
+                            console.log(`The ${enemyType}'s health is now: ${enemyHealth} ...\n`)
+
+                            if (enemyHealth == 0) {
+                                console.log(`You killed the ${enemyType}.`);
+
+                                //give player hp and special item
+
+                                break;
+                            }
+
+                            console.log(`Your current health is: ${playerHealth}\n`)
+
+                            playerHealth -= enemyAttackPower;
+
+                            console.log(`The ${enemyType} has attacked you with an attack power of: ${enemyAttackPower}\n`)
+
+                            if (playerHealth < 0) {playerHealth = 0;}
+
+                            console.log(`Your current health is now: ${playerHealth}\n`)
+
+                            if (playerHealth == 0) {
+                                console.log(`The ${enemyType} killed you.`);
+                                break;
+                            }
+
+                            break;
+                        case 'r':
+                            // 50% chance of escape
+                            break;
+                        case 'q':
+                            playerHealth = 0;
+                    }
+
+                }
             }
             break;
 

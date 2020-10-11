@@ -20,7 +20,6 @@ module.exports.inventoryExists = (arr, item) => {
 }
 
 module.exports.enemyAppears = () => {
-    // 1 in 3 chance the enemy appears
     let min = 1, max = 3;
     if (Math.floor(Math.random() * (max - min + 1) ) + min == 1) {
         return true;
@@ -33,7 +32,12 @@ module.exports.enemyName = () => {
     let enemyNames = ['Dragon', 'Vampire', 'Skeleton Warrior', 'Witch', 
         'Werewolf', 'Gobblin', 'Frankenstein Monster'];
     let min = 1, max = enemyNames.length;
-    let enemyNum = Math.floor(Math.random() * (max - min + 1) ) + min;
+    let enemyNum = Math.floor(Math.random() * (max - min + 1)) + min;
 
     return enemyNames[enemyNum -1];
+}
+
+module.exports.attackPower = () => {
+    let min = 1, max = 3;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
