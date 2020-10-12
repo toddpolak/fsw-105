@@ -5,29 +5,55 @@ function Player(name, health) {
 }
 
 Player.prototype.inventory = function () {
+    let inventory = '';
+    let goldCoins = 0;
+    let redRubies = 0;
+    let shinyDiamonds = 0;
 
-    /*
-    let inventory;
-    let inventoryItems = this.inventoryItems;
-    for (i = 0; i < inventoryItems.length; i++) {
-
-    }
-    */
-
-    //console.log(`Player Name: ${this.name}\nHealth: ${this.health}`);
-    console.log(`Player Name: ${this.name}\nHealth: ${this.health}\nItems: ${this.inventoryItems}`);
-}
-
-/*
-inventoryExists = (arr, item) => {
-    for (i = 0; i <= arr.length; i++) {
-        if (arr[i] === item) {
-            return true;
+    for (i = 0; i < this.inventoryItems.length; i++) {
+        switch (this.inventoryItems[i]) {
+            case 'Gold Coin':
+                goldCoins += 1;
+                break;
+            case 'Red Ruby':
+                redRubies += 1;
+                break;
+            case 'Shiny Diamond':
+                shinyDiamonds += 1;
         }
     }
-    return false;
+
+    if (goldCoins != 0) {
+        inventory += '(' + goldCoins + ')';
+        if (goldCoins > 1) {
+            inventory += 'Gold Coins ';
+        } else {
+            inventory += 'Gold Coin ';
+        }
+    }
+
+    if (redRubies != 0) {
+        inventory += '(' + redRubies + ')';
+        if (redRubies > 1) {
+            inventory += 'Red Rubies ';
+        } else {
+            inventory += 'Red Ruby ';
+        }
+    }
+
+    if (shinyDiamonds != 0) {
+        inventory += '(' + shinyDiamonds + ')';
+        if (shinyDiamonds > 1) {
+            inventory += 'Shiny Diamonds ';
+        } else {
+            inventory += 'Shiny Diamond ';
+        }
+    }
+
+    if (inventory == '') {inventory = 'none';}
+
+    console.log(`\nPlayer Name: ${this.name}\nHealth: ${this.health}\nItems: ${inventory}\n`);
 }
-*/
 
 module.exports = Player;
 
@@ -41,11 +67,13 @@ module.exports.specialItem = () => {
 
 module.exports.earnedHealthPoints = () => {
     let min = 1, max = 5;
+
     return Math.floor(Math.random() * (max - min + 1)) + min; 
 }
 
 module.exports.enemyAppears = () => {
     let min = 1, max = 3;
+
     if (Math.floor(Math.random() * (max - min + 1) ) + min == 1) {
         return true;
     } else {
@@ -64,11 +92,13 @@ module.exports.enemyName = () => {
 
 module.exports.attackPower = () => {
     let min = 1, max = 3;
+
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 module.exports.ranAway = () => {
     let run = Math.floor(Math.random() * (2 - 1 + 1)) + 1;
+
     if (run == 1) {
         return true;
     } else {
