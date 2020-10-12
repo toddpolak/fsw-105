@@ -127,7 +127,7 @@ while (playerHealth > 0) {
 
                                 console.log(`The ${cRed(enemyType)} has attacked you with an attack power of: ${cRed(enemyAttackPower)}\n`);
 
-                                if (playerHealth == 0) {
+                                if (playerHealth <= 0) {
                                     console.log(`The ${cRed(enemyType)} has killed you. The game is over.`);
                                     break;
                                 }
