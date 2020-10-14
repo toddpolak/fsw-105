@@ -8,6 +8,18 @@ body {
 li {
     padding: 10px;
 }
+#container {
+    border: 1px solid black;
+}
+.content {
+    border: 1px solid black;
+    width: 200px;
+    display: inline;
+}
+.img {
+    border: 1px solid black;
+    float: right;
+}
 @media only screen and (min-width: 600px) and (max-width: 768px){
 
 }
