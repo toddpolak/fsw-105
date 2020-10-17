@@ -23,6 +23,11 @@ Player.prototype.inventory = function () {
         }
     }
 
+    if (goldCoins != 0) { inventory += '(' + goldCoins + ')' };
+
+    goldCoins > 1 ? inventory += 'Gold Coins ' : inventory += 'Gold Coin ';
+
+    /*
     if (goldCoins != 0) {
         inventory += '(' + goldCoins + ')';
         if (goldCoins > 1) {
@@ -31,7 +36,13 @@ Player.prototype.inventory = function () {
             inventory += 'Gold Coin ';
         }
     }
+    */
 
+   if (redRubies != 0) { inventory += '(' + redRubies + ')' };
+
+   redRubies > 1 ? inventory += 'Red Rubies ' : inventory += 'Red Ruby ';
+
+   /*
     if (redRubies != 0) {
         inventory += '(' + redRubies + ')';
         if (redRubies > 1) {
@@ -40,7 +51,13 @@ Player.prototype.inventory = function () {
             inventory += 'Red Ruby ';
         }
     }
+    */
 
+   if (shinyDiamonds != 0) { inventory += '(' + shinyDiamonds + ')' };
+
+   shinyDiamonds > 1 ? inventory += 'Shiny Diamonds ' : inventory += 'Shiny Diamond ';
+
+   /*
     if (shinyDiamonds != 0) {
         inventory += '(' + shinyDiamonds + ')';
         if (shinyDiamonds > 1) {
@@ -49,6 +66,7 @@ Player.prototype.inventory = function () {
             inventory += 'Shiny Diamond ';
         }
     }
+    */
 
     if (inventory == '') {inventory = 'none';}
 
@@ -74,11 +92,15 @@ module.exports.earnedHealthPoints = () => {
 module.exports.enemyAppears = () => {
     let min = 1, max = 3;
 
+    return (Math.floor(Math.random() * (max - min + 1) ) + min) == 1
+
+    /*
     if (Math.floor(Math.random() * (max - min + 1) ) + min == 1) {
         return true;
     } else {
         return false;
     }
+    */
 }
 
 module.exports.enemyName = () => {
@@ -97,6 +119,9 @@ module.exports.attackPower = () => {
 }
 
 module.exports.ranAway = () => {
+    return (Math.floor(Math.random() * (2 - 1 + 1)) + 1) == 1;
+
+    /*
     let run = Math.floor(Math.random() * (2 - 1 + 1)) + 1;
 
     if (run == 1) {
@@ -104,4 +129,5 @@ module.exports.ranAway = () => {
     } else {
         return false;
     }
+    */
 }

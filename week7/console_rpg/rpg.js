@@ -60,12 +60,18 @@ while (playerHealth > 0) {
 
                     switch (enemyEncounter) {
                         case 'a':
+                            console.log(chalk.bgCyanBright.yellowBright(`                                                    `));
+                            console.log(chalk.bgCyanBright.yellowBright.bold(`             THE FIGHT HAS BEGUN!!               `));
+                            console.log(chalk.bgCyanBright.yellowBright(`                                                    `));
                             console.log(`\n${cBlue('Your')} health is: ${cBlue(playerHealth)}`);
                             console.log(`The ${cRed(enemyType)}'s health is: ${cRed(enemyHealth)}\n`);
 
                             enemyHealth -= playerAttackPower;
 
                             console.log(`${cBlue('You')} have attacked the ${cRed(enemyType)} with an attack power of: ${cBlue(playerAttackPower)}`);
+
+                            console.log(`\n${cBlue('Your')} health is: ${cBlue(playerHealth)}`);
+                            console.log(`The ${cRed(enemyType)}'s health is: ${cRed(enemyHealth)}\n`);
 
                             if (enemyHealth < 0) {enemyHealth = 0;}
 
@@ -106,6 +112,9 @@ while (playerHealth > 0) {
 
                             console.log(`The ${cRed(enemyType)} has attacked you with an attack power of: ${cRed(enemyAttackPower)}\n`);
 
+                            console.log(`\n${cBlue('Your')} health is: ${cBlue(playerHealth)}`);
+                            console.log(`The ${cRed(enemyType)}'s health is: ${cRed(enemyHealth)}\n`);
+
                             if (playerHealth < 0) {playerHealth = 0;}
 
                             if (playerHealth == 0) {
@@ -126,6 +135,9 @@ while (playerHealth > 0) {
                                 playerHealth -= enemyAttackPower;
 
                                 console.log(`The ${cRed(enemyType)} has attacked you with an attack power of: ${cRed(enemyAttackPower)}\n`);
+
+                                console.log(`${cBlue('Your')} health is: ${cBlue(playerHealth)}`);
+                                console.log(`The ${cRed(enemyType)}'s health is: ${cRed(enemyHealth)}\n`);
 
                                 if (playerHealth <= 0) {
                                     console.log(`The ${cRed(enemyType)} has killed you. The game is over.`);
