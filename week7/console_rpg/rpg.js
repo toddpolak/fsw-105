@@ -6,7 +6,6 @@ const cYellow = chalk.yellow.bold;
 const cBlue = chalk.cyan.bold;
 const cGreen = chalk.green.bold;
 const cMagenta = chalk.magenta.bold;
-const cBox = chalk.black.bold.bgYellow;
 const initOptions = {limit: ['w', 'print', 'q']};
 const enemyEncounterOptions = {limit: ['a', 'r', 'q']};
 const enemyEncounterQuestion = `What would you like to do? Enter '${cBlue('a')}' to attack', '${cBlue('r')}' try to run or '${cBlue('q')}' to quit: `;
