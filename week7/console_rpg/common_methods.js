@@ -23,15 +23,15 @@ Player.prototype.inventory = function () {
         }
     }
 
-    if (goldCoins != 0) { inventory += '(' + goldCoins + ')' };
+    if (goldCoins != 0) {inventory += '(' + goldCoins + ')';}
 
     goldCoins > 1 ? inventory += 'Gold Coins ' : inventory += 'Gold Coin ';
 
-    if (redRubies != 0) { inventory += '(' + redRubies + ')' };
+    if (redRubies != 0) {inventory += '(' + redRubies + ')';}
 
     redRubies > 1 ? inventory += 'Red Rubies ' : inventory += 'Red Ruby ';
 
-    if (shinyDiamonds != 0) { inventory += '(' + shinyDiamonds + ')' };
+    if (shinyDiamonds != 0) {inventory += '(' + shinyDiamonds + ')';}
 
     shinyDiamonds > 1 ? inventory += 'Shiny Diamonds ' : inventory += 'Shiny Diamond ';
 
@@ -59,7 +59,7 @@ module.exports.earnedHealthPoints = () => {
 module.exports.enemyAppears = () => {
     let min = 1, max = 3;
 
-    return (Math.floor(Math.random() * (max - min + 1) ) + min) == 1
+    return (Math.floor(Math.random() * (max - min + 1) ) + min) == 1;
 }
 
 module.exports.enemyName = () => {
