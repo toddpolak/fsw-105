@@ -23,17 +23,20 @@ Player.prototype.inventory = function () {
         }
     }
 
-    if (goldCoins != 0) {inventory += '(' + goldCoins + ')';}
+    if (goldCoins != 0) {
+        inventory += '(' + goldCoins + ')';
+        goldCoins > 1 ? inventory += 'Gold Coins ' : inventory += 'Gold Coin ';
+    }
 
-    goldCoins > 1 ? inventory += 'Gold Coins ' : inventory += 'Gold Coin ';
+    if (redRubies != 0) {
+        inventory += '(' + redRubies + ')';
+        redRubies > 1 ? inventory += 'Red Rubies ' : inventory += 'Red Ruby ';
+    }
 
-    if (redRubies != 0) {inventory += '(' + redRubies + ')';}
-
-    redRubies > 1 ? inventory += 'Red Rubies ' : inventory += 'Red Ruby ';
-
-    if (shinyDiamonds != 0) {inventory += '(' + shinyDiamonds + ')';}
-
-    shinyDiamonds > 1 ? inventory += 'Shiny Diamonds ' : inventory += 'Shiny Diamond ';
+    if (shinyDiamonds != 0) {
+        inventory += '(' + shinyDiamonds + ')';
+        shinyDiamonds > 1 ? inventory += 'Shiny Diamonds ' : inventory += 'Shiny Diamond ';
+    }
 
     if (inventory == '') {inventory = 'none';}
 
