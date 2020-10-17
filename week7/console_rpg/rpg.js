@@ -61,10 +61,9 @@ while (playerHealth > 0) {
                     switch (enemyEncounter) {
                         case 'a':
                             console.log(chalk.bgCyanBright.yellowBright(`                                                    `));
-                            console.log(chalk.bgCyanBright.yellowBright.bold(`             THE FIGHT HAS BEGUN!!               `));
+                            console.log(chalk.bgCyanBright.yellowBright.bold(`                THE FIGHT HAS BEGUN!!               `));
                             console.log(chalk.bgCyanBright.yellowBright(`                                                    `));
-                            console.log(`\n${cBlue('Your')} health is: ${cBlue(playerHealth)}`);
-                            console.log(`The ${cRed(enemyType)}'s health is: ${cRed(enemyHealth)}\n`);
+                            console.log(`\n${cBlue('Your')} health: ${cBlue(playerHealth)} - The ${cRed(enemyType)}'s health: ${cRed(enemyHealth)}\n`);
 
                             enemyHealth -= playerAttackPower;
 
