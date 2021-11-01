@@ -8,7 +8,7 @@ const arrNames = [
 ];
 
 function fiveAndGreaterOnly(arr) {
-    return arr.filter(num => num > 5);
+    return arr.filter(num => num >= 5);
 }
 console.log(fiveAndGreaterOnly([3, 6, 8, 2]));
 
